@@ -1,0 +1,41 @@
+.wrapperStations {
+  height: 344px;
+  color: #a2abbd;
+  padding: 27px 18px;
+  overflow: hidden;
+
+  .stationInfo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 44px;
+    border-bottom: 1.5px solid #42424c;
+    margin-bottom: 15px;
+    padding: 2.5px;
+
+    &:hover {
+      cursor: pointer;
+      color: #6e6e81;
+    }
+
+    .frq {
+      font-weight: bold;
+    }
+  }
+
+  .stationInfoDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    img {
+      width: 32px;
+    }
+
+    .clipImg {
+      width: 140px;
+      border: 2px solid #a2abbd;
+      border-radius: 73px;
+    }
+  }
+}

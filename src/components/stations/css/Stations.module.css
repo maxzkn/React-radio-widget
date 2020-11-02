@@ -1,0 +1,52 @@
+.wrapperStations {
+  height: 344px;
+  color: #a2abbd;
+  padding: 27px 18px;
+  overflow: hidden;
+}
+
+.wrapperStations .stationInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 44px;
+  border-bottom: 1.5px solid #42424c;
+  margin-bottom: 15px;
+  padding: 2.5px;
+}
+
+.wrapperStations .stationInfo:hover {
+  cursor: pointer;
+  color: #6e6e81;
+}
+
+.wrapperStations .stationInfo .frq {
+  font-weight: bold;
+}
+
+.wrapperStations .stationInfoDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.wrapperStations .stationInfoDetails img {
+  width: 32px;
+}
+
+.wrapperStations .stationInfoDetails .clipImg {
+  width: 140px;
+  border: 2px solid #a2abbd;
+  border-radius: 73px;
+}
+/*# sourceMappingURL=Stations.module.css.map */

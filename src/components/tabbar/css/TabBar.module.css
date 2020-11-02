@@ -1,0 +1,37 @@
+.tabbar {
+  height: 80px;
+  background: #25252f;
+  border-top: 1.5px solid #515561;
+  border-radius: 0px 0px 24px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tabbar .current {
+  text-align: center;
+}
+
+.tabbar .current p {
+  font-size: 11px;
+  color: #edae61;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.tabbar .current h2 {
+  color: #a2abbd;
+}
+/*# sourceMappingURL=TabBar.module.css.map */

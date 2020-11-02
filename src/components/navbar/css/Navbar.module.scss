@@ -1,0 +1,27 @@
+.nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ecaa5b;
+  color: #ffffff;
+  border-radius: 24px 24px 0px 0px;
+  padding: 25px 20px;
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  img {
+    width: 14px;
+  }
+
+  .switchImg {
+    width: 22px;
+  }
+
+  .button {
+    padding: 5px 5px 5px 0px;
+  }
+}

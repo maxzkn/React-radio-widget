@@ -1,0 +1,27 @@
+.tabbar {
+  height: 80px;
+  background: #25252f;
+  border-top: 1.5px solid #515561;
+  border-radius: 0px 0px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .current {
+    text-align: center;
+
+    p {
+      font-size: 11px;
+      color: #edae61;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      color: #a2abbd;
+    }
+  }
+}
