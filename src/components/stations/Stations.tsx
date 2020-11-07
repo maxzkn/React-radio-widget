@@ -6,41 +6,32 @@ import imgMinus from '../../assets/images/minus.png';
 import imgPlus from '../../assets/images/plus.png';
 import imgClip from '../../assets/images/Clip.png';
 
-const Stations: React.FC<RadioProps> = (props: RadioProps): React.ReactElement => {
+const Stations = (props: RadioProps): React.ReactElement => {
   const {
     stationList,
-    stationDetails,
-    clickedStationId,
-    toggleStationDetails,
-    getStationId,
+    isStationDetailsShown,
+    selectedStationId,
+    toggleisStationDetailsShown,
+    setStation,
   } = props;
 
-  const getId = (id: number) => {
+  const setSelectedStation = (id: number) => {
     // check if getStationId prop is defined before calling it, because I made it optional
-    if (getStationId) getStationId(id);
+    if (setStation) setStation(id);
   };
 
   const toggleDetails = () => {
-    // check if toggleStationDetails prop is defined before calling it, because I made it optional
-    if (toggleStationDetails) toggleStationDetails();
+    // check if toggleisStationDetailsShown prop is defined before calling it, because I made it optional
+    if (toggleisStationDetailsShown) toggleisStationDetailsShown();
   };
-
-  let overflowScroll: any = {
-    overflowY: '',
-  };
-
-  // activate scroll if there are more than 5 stations or if stationInfoDetails div is shown
-  if (stationList.length > 5 || stationDetails) {
-    overflowScroll = { overflowY: 'scroll' };
-  }
 
   return (
-    <div className={classes.wrapperStations} style={overflowScroll}>
-      {stationList.map(station => (
+    <div className={classes.wrapperStations}>
+      {stationList?.map(station => (
         <div key={station.id}>
-          {station.id === clickedStationId ? (
+          {station.id === selectedStationId ? (
             <div className='collapse' id='showStation'>
-              <div className={classes.stationInfoDetails} data-testid='stationDetailsDiv'>
+              <div className={classes.stationInfoDetails} data-testid='isStationDetailsShownDiv'>
                 <button>
                   <img src={imgMinus} alt='img-minus' />
                 </button>
@@ -58,10 +49,8 @@ const Stations: React.FC<RadioProps> = (props: RadioProps): React.ReactElement =
           <div
             className={classes.stationInfo}
             onClick={() => {
-              // get clicked station ID
-              getId(station.id);
-              // set stationDetails to true and show stationInfoDetails div
-              if (!stationDetails || station.id === clickedStationId) toggleDetails();
+              setSelectedStation(station.id);
+              if (!isStationDetailsShown || station.id === selectedStationId) toggleDetails();
             }}
             data-testid='stationListDiv'
             data-toggle='collapse'

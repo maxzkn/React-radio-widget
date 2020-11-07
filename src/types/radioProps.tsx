@@ -1,9 +1,10 @@
 import { stationListType } from './stationList';
 
 export type RadioProps = {
-  stationList: stationListType[];
-  stationDetails: boolean;
-  clickedStationId: number;
-  toggleStationDetails?: () => void;
-  getStationId?: (id: number) => void;
+  stationList?: stationListType[];
+  isStationDetailsShown: boolean;
+  selectedStationId?: number | null;
+  selectedStation: stationListType | null;
+  toggleisStationDetailsShown?: () => void;
+  setStation?: (id: number) => void;
 };

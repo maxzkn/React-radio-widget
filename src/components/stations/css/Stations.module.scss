@@ -1,8 +1,8 @@
 .wrapperStations {
-  height: 344px;
+  max-height: 350px;
+  overflow: auto;
   color: #a2abbd;
   padding: 27px 18px;
-  overflow: hidden;
 
   .stationInfo {
     display: flex;

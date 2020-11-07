@@ -5,12 +5,12 @@ import TabBar from '../TabBar';
 afterEach(cleanup);
 
 describe('TabBar', () => {
-  test('shows div with currently playing station if stationDetails=true', () => {
+  test('shows div with currently playing station if isStationDetailsShown=true', () => {
     render(
       <TabBar
         stationList={[{ id: 1, name: 'TestFM', frq: '99,9' }]}
-        stationDetails={true}
-        clickedStationId={1}
+        isStationDetailsShown={true}
+        selectedStationId={1}
       ></TabBar>,
     );
 
@@ -19,12 +19,12 @@ describe('TabBar', () => {
     // screen.debug();
   });
 
-  test("doesn't show div with currently playing station if stationDetails=false", () => {
+  test("doesn't show div with currently playing station if isStationDetailsShown=false", () => {
     render(
       <TabBar
         stationList={[{ id: 1, name: 'TestFM', frq: '99,9' }]}
-        stationDetails={false}
-        clickedStationId={1}
+        isStationDetailsShown={false}
+        selectedStationId={1}
       ></TabBar>,
     );
 
