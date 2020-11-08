@@ -52,15 +52,20 @@ const App: React.FC = () => {
     };
   }, []);
 
+  console.log(selectedStation);
+
+  useEffect(() => {
+    const selected = stationList.find(station => station.id === selectedStationId);
+    console.log(selectedStation);
+    if (selected !== undefined) setSelectedStation(selected);
+  }, [selectedStationId]);
+
   const toggleisStationDetailsShown = () => {
     setisStationDetailsShown(!isStationDetailsShown);
   };
 
   const setStation = (id: number) => {
     setSelectedStationId(id);
-    stationList
-      .filter(station => station.id === selectedStationId)
-      .map(station => setSelectedStation(station));
   };
 
   return (
