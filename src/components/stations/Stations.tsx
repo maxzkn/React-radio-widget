@@ -10,7 +10,7 @@ const Stations = (props: RadioProps): React.ReactElement => {
   const {
     stationList,
     isStationDetailsShown,
-    selectedStationId,
+    selectedStation,
     toggleisStationDetailsShown,
     setStation,
   } = props;
@@ -29,7 +29,7 @@ const Stations = (props: RadioProps): React.ReactElement => {
     <div className={classes.wrapperStations}>
       {stationList?.map(station => (
         <div key={station.id}>
-          {station.id === selectedStationId ? (
+          {selectedStation && station.id === selectedStation.id ? (
             <div className='collapse' id='showStation'>
               <div className={classes.stationInfoDetails} data-testid='isStationDetailsShownDiv'>
                 <button>
@@ -50,7 +50,8 @@ const Stations = (props: RadioProps): React.ReactElement => {
             className={classes.stationInfo}
             onClick={() => {
               setSelectedStation(station.id);
-              if (!isStationDetailsShown || station.id === selectedStationId) toggleDetails();
+              if (!isStationDetailsShown || (selectedStation && station.id === selectedStation.id))
+                toggleDetails();
             }}
             data-testid='stationListDiv'
             data-toggle='collapse'

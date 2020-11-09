@@ -17,7 +17,6 @@ const App: React.FC = () => {
   ]);
 
   const [isStationDetailsShown, setisStationDetailsShown] = useState(false);
-  const [selectedStationId, setSelectedStationId] = useState<number | null>(null);
   const [selectedStation, setSelectedStation] = useState<stationListType | null>(null);
 
   useEffect(() => {
@@ -52,20 +51,13 @@ const App: React.FC = () => {
     };
   }, []);
 
-  console.log(selectedStation);
-
-  useEffect(() => {
-    const selected = stationList.find(station => station.id === selectedStationId);
-    console.log(selectedStation);
-    if (selected !== undefined) setSelectedStation(selected);
-  }, [selectedStationId]);
-
   const toggleisStationDetailsShown = () => {
     setisStationDetailsShown(!isStationDetailsShown);
   };
 
   const setStation = (id: number) => {
-    setSelectedStationId(id);
+    const selected = stationList.find(station => station.id === id);
+    setSelectedStation(selected !== undefined ? selected : null);
   };
 
   return (
@@ -76,7 +68,6 @@ const App: React.FC = () => {
           <Stations
             stationList={stationList}
             isStationDetailsShown={isStationDetailsShown}
-            selectedStationId={selectedStationId}
             selectedStation={selectedStation}
             toggleisStationDetailsShown={toggleisStationDetailsShown}
             setStation={setStation}

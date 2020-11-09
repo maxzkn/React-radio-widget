@@ -4,7 +4,7 @@ import classes from './css/TabBar.module.scss';
 
 const TabBar = (props: RadioProps): React.ReactElement => {
   const { isStationDetailsShown, selectedStation } = props;
-  console.log('tabbar', selectedStation);
+
   return (
     <div className={classes.tabbar}>
       {isStationDetailsShown && selectedStation ? (
